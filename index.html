@@ -61,57 +61,58 @@
                 text-align: center;
             }
              img{
-             width: 100%;
-             height: 100%;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
              }
              .flip3D{ width:200px; height:220px; display:inline-block; }
-             .flip3D > .front{
-             position:absolute;
-             transform: perspective( 600px ) rotateX( 0deg );
-             backface-visibility: hidden;
-             transition: transform .5s linear 0s;
-             padding:10px;
-             margin:10px;
-             display:inline-block;
-             border-radius:10px;
-             border: 2px solid;
-             border-color: #eb0707;
-             box-shadow:black 5px 5px 5px;
-             width: 325px;
-             height: 325px;
-             text-align: center;
+                 .flip3D > .front{
+                 position:absolute;
+                 transform: perspective( 600px ) rotateX( 0deg );
+                 backface-visibility: hidden;
+                 transition: transform .5s linear 0s;
+                 padding:10px;
+                 margin:10px;
+                 display:inline-block;
+                 border-radius:10px;
+                 border: 2px solid;
+                 border-color: #eb0707;
+                 box-shadow:black 5px 5px 5px;
+                 width: 325px;
+                 height: 325px;
+                 text-align: center;
              }
              .flip3D > .back{
-             position:absolute;
-             transform: perspective( 600px ) rotateX( 180deg );
-             backface-visibility: hidden;
-             transition: transform .5s linear 0s;
-             padding:10px;
-             margin:10px;
-             display:inline-block;
-             border-radius:10px;
-             border: 2px solid;
-             border-color: #eb0707;
-             box-shadow:black 5px 5px 5px;
-             width: 325px;
-             height: 325px;
-             text-align: center;
+                 position:absolute;
+                 transform: perspective( 600px ) rotateX( 180deg );
+                 backface-visibility: hidden;
+                 transition: transform .5s linear 0s;
+                 padding:10px;
+                 margin:10px;
+                 display:inline-block;
+                 border-radius:10px;
+                 border: 2px solid;
+                 border-color: #eb0707;
+                 box-shadow:black 5px 5px 5px;
+                 width: 325px;
+                 height: 325px;
+                 text-align: center;
              } 
              .flip3D:hover > .front{
-             transform: perspective(600px) rotateX(-180deg);
-             box-shadow: 5px 5px 5px grey;
+                 transform: perspective(600px) rotateX(-180deg);
+                 box-shadow: 5px 5px 5px grey;
              }
              .flip3D:hover > .back{
-             transform: perspective(600px) rotateX(0deg);
-             box-shadow: 5px 5px 5px grey;
-             transform: scale(1.1);
+                 transform: perspective(600px) rotateX(0deg);
+                 box-shadow: 5px 5px 5px grey;
+                 transform: scale(1.1);
              }
             .tabset > input[type="radio"] {
                     position: absolute;
                     left: -200vw;
                 }
             .tabset .tab-panel {
-                display: none;
+                    display: none;
             }
             .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
             .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
@@ -411,7 +412,7 @@
              <label for="tab5">Dispatch Calls</label>
 
             <div class="tab-panels">
-                   <section id="FDNY-Home" class="tab-panel">
+             <section id="FDNY-Home" class="tab-panel">
                  <p3>In this website, Fire Department New York, you will be able to search and sort through different data. There are four different sets of JSONS relating to the FDNY. Each JSON dataset is contained in a separate tab. In the first tab, you will be able to find a Fire House base on the borough you search for. In the second tab you can search through Response Time, which gives a general estimate of number of deaths, the year and response time for each borough and incident. Third tab gives details on vacated buildings and when they were vacated. The last tab shows dispatch calls and their details like location, borough, response time, date and time. For all the tabs you can just click display without having to input information to display the whole JSON dataset. In the Fire House tab and Vacated Building tab there is an option for each card of information that allows you to view the location in google maps at the right corner of the screen.</p3>
                  <div class=center>
                  <div class= flip3D>
@@ -453,7 +454,7 @@
                  </div>
                  </div><br><br><br><br><br><br><br><br>
 
-                 </section>
+             </section>
 
             <section id="Fire House" class="tab-panel">
                 <input type="text" id="nta" class="pl" placeholder="Enter a Name">
