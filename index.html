@@ -60,6 +60,52 @@
                 height: 400px;
                 text-align: center;
             }
+             img{
+             width: 100%;
+             height: 100%;
+             }
+             .flip3D{ width:200px; height:220px; display:inline-block; }
+             .flip3D > .front{
+             position:absolute;
+             transform: perspective( 600px ) rotateX( 0deg );
+             backface-visibility: hidden;
+             transition: transform .5s linear 0s;
+             padding:10px;
+             margin:10px;
+             display:inline-block;
+             border-radius:10px;
+             border: 2px solid;
+             border-color: #eb0707;
+             box-shadow:black 5px 5px 5px;
+             width: 325px;
+             height: 325px;
+             text-align: center;
+             }
+             .flip3D > .back{
+             position:absolute;
+             transform: perspective( 600px ) rotateX( 180deg );
+             backface-visibility: hidden;
+             transition: transform .5s linear 0s;
+             padding:10px;
+             margin:10px;
+             display:inline-block;
+             border-radius:10px;
+             border: 2px solid;
+             border-color: #eb0707;
+             box-shadow:black 5px 5px 5px;
+             width: 325px;
+             height: 325px;
+             text-align: center;
+             } 
+             .flip3D:hover > .front{
+             transform: perspective(600px) rotateX(-180deg);
+             box-shadow: 5px 5px 5px grey;
+             }
+             .flip3D:hover > .back{
+             transform: perspective(600px) rotateX(0deg);
+             box-shadow: 5px 5px 5px grey;
+             transform: scale(1.1);
+             }
             .tabset > input[type="radio"] {
                     position: absolute;
                     left: -200vw;
@@ -150,6 +196,20 @@
             body {
                 background-color: #B3A6A6;
             }
+                     p2{
+             font-family: verdana;
+             font-size: 20px;
+             color: #06c;
+             text-align:center;
+             }
+             p3{
+             width:270px;
+                height:150px;
+                position:absolute;
+                left:50%;
+                top:50%;
+                margin:-75px 0 0 -135px;
+             }
 
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -339,16 +399,61 @@
         <body onload = "search4() ; search3() ; search2() ; search()">
             <div class="tabset">
         
-                    <input type="radio" name="tabset" id="tab1" aria-controls="Fire House" checked>
-                    <label for="tab1">Fire Stations</label>
-                    <input type="radio" name="tabset" id="tab2" aria-controls="Responce Time">
-                    <label for="tab2">Responce Times</label>
-                    <input type="radio" name="tabset" id="tab3" aria-controls="Vacated Buildings">
-                    <label for="tab3">Vacated Buildings</label>
-                    <input type="radio" name="tabset" id="tab4" aria-controls="Dispatch Calls">
-                    <label for="tab4">Dispatch Calls</label>
+             <input type="radio" name="tabset" id="tab1" aria-controls="FDNY-Home" checked>
+             <label for="tab1">FDNY-Home</label>
+             <input type="radio" name="tabset" id="tab2" aria-controls="Fire House">
+             <label for="tab2">Fire Stations</label>
+             <input type="radio" name="tabset" id="tab3" aria-controls="Responce Time">
+             <label for="tab3">Responce Times</label>
+             <input type="radio" name="tabset" id="tab4" aria-controls="Vacated Buildings">
+             <label for="tab4">Vacated Buildings</label>
+             <input type="radio" name="tabset" id="tab5" aria-controls="Dispatch Calls">
+             <label for="tab5">Dispatch Calls</label>
 
             <div class="tab-panels">
+                   <section id="FDNY-Home" class="tab-panel">
+                 <p3>In this website, Fire Department New York, you will be able to search and sort through different data. There are four different sets of JSONS relating to the FDNY. Each JSON dataset is contained in a separate tab. In the first tab, you will be able to find a Fire House base on the borough you search for. In the second tab you can search through Response Time, which gives a general estimate of number of deaths, the year and response time for each borough and incident. Third tab gives details on vacated buildings and when they were vacated. The last tab shows dispatch calls and their details like location, borough, response time, date and time. For all the tabs you can just click display without having to input information to display the whole JSON dataset. In the Fire House tab and Vacated Building tab there is an option for each card of information that allows you to view the location in google maps at the right corner of the screen.</p3>
+                 <div class=center>
+                 <div class= flip3D>
+                 <div class = front>
+                 <center><p2>A JSON list about Fire Stations, with a borough, address, name, NTA, postcard, etc...</p2></center>
+                 </div>
+                 <div class = back>
+                 <img src = "fire1.png">
+                 </div>
+                 </div><br><br><br><br><br><br><br><br>
+
+                 <div class=center>
+                 <div class= flip3D>
+                 <div class = front>
+                 <center><p2>A JSON list about Responce Times, with a borough, incident count, classification, date and responce time.</p2></center>
+                 </div>
+                 <div class = back>
+                 <img src = "fire2.png">
+                 </div>
+                 </div><br><br><br><br><br><br><br><br>
+
+                 <div class=center style= "position:absolute; top:231px; right:155px; display:inline-block;">
+                 <div class= flip3D>
+                 <div class = front>
+                 <center><p2>A JSON list about Vacated Buildings, with a area, location, date, NTA, etc...</p2></center>
+                 </div>
+                 <div class = back>
+                 <img src = "fire3.png">
+                 </div>
+                 </div><br><br><br><br><br><br><br><br>
+
+                 <div class=center style= "position:absolute; top:347px; right:0px; display:inline-block;">
+                 <div class= flip3D>
+                 <div class = front>
+                 <center><p2>A JSON list about Dispatch Calls, with a borough, location, despription, Alarm Level, Classification, Date, etc...</p2></center>
+                 </div>
+                 <div class = back>
+                 <img src = "fire4.png">
+                 </div>
+                 </div><br><br><br><br><br><br><br><br>
+
+                 </section>
 
             <section id="Fire House" class="tab-panel">
                 <input type="text" id="nta" class="pl" placeholder="Enter a Name">
